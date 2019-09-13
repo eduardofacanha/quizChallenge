@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  Quiz
+
+  Created by Eduardo Façanha on 11/09/19.
+  Copyright © 2019 Facanha. All rights reserved.
+*/
+
+"LOADING" = "Loading...";
+"TIME_FINISHED" = "Time Finished";
+"TIME_FINISHED_DESCRIPTION" = "Sorry, time is up! You got %d out of %d answers";
+"TRY_AGAIN" = "Try Again";
+"CONGRATULATIONS" = "Congratulations";
+"CONGRATULATIONS_DESCRIPTION" = "Good Job! You found all the answers on time. Keep up with the great work.";
+"PLAY_AGAIN" = "Play Again";
+"START" = "Start";
+"RESET" = "Reset";
