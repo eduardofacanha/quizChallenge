@@ -10,25 +10,38 @@ import XCTest
 @testable import Quiz
 
 class QuizTests: XCTestCase {
+  
+  let quizNumber = 1
+  var viewModel: QuizViewModel!
+  var quiz: Quiz?
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+      viewModel = QuizViewModel.init(id: quizNumber, delegate: nil)
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+      viewModel = nil
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+  
+  func testWon() {
+    let completedExpectation = expectation(description: "completed")
+    completedExpectation.isInverted = true
+    let dataManager = DataManager.init(delegate: self)
+    dataManager.requestQuiz(id: quizNumber)
+    waitForExpectations(timeout: 5, handler: nil)
+    viewModel.play()
+    if let answers = quiz?.answers {
+      answers.forEach({ (answer) in
+        let _ = self.viewModel.verify(answer: answer)
+      })
+      completedExpectation.fulfill()
     }
+    XCTAssertEqual(quiz!.answers.count, viewModel.numberOfRows, "Should be equal")
+  }
+}
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
+extension QuizTests: ResponseHandler {
+  func didReceive(quiz: Quiz) {
+    self.quiz = quiz
+  }
 }

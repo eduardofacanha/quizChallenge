@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "00:00"; ObjectID = "6MU-I9-osh"; */
+"6MU-I9-osh.text" = "00:00";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "FZI-33-7y8"; */
+"FZI-33-7y8.text" = "Title";
+
+/* Class = "UILabel"; text = "00/00"; ObjectID = "WwR-kf-cNV"; */
+"WwR-kf-cNV.text" = "00/00";
+
+/* Class = "UITextField"; placeholder = "Insert Word"; ObjectID = "wGB-OA-hnU"; */
+"wGB-OA-hnU.placeholder" = "Insert Word";
